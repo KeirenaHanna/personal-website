@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website of Hanna Jamias</title>
+    <style>
+        body {
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+        
+         }
+        canvas {
+        position: relative;  /*i had to change the position from fixed to relative so that the effect is on the whole pagee */
+        width: 100%;
+        height: 100%;
+         }
+          /* Avoid global positioning of all anchor tags */
+         a {
+        position: static; /* Remove absolute positioning for non-nav links */
+        bottom: 2vmin;
+        right: 2vmin;
+        color: rgba(255,255,255,0.2);
+        text-decoration: none;
+        }
+
+          a:hover {
+        color: #fff;
+          }
+   
+        body {
+            background-color: black;
+            color: #d4a8ff;
+            font-family: 'Press Start 2P', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: rgb(155, 195, 255);
+        }
+
+        .glow {
+            color: #fff;
+            text-align: center;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(155, 195, 255), 0 0 40px rgb(155, 195, 255), 0 0 50px rgb(155, 195, 255), 0 0 60px rgb(155, 195, 255), 0 0 70px rgb(155, 195, 255);
+        }
+  
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #bc8df8, 0 0 40px #bc8df8, 0 0 50px #bc8df8, 0 0 60px #bc8df8, 0 0 70px #bc8df8, 0 0 80px #bc8df8;
+        }
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .rocket {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 100px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/e/e7/Small_Rocket_Clipart.svg') no-repeat center;
+            background-size: contain;
+            z-index: 10;
+            transition: top 1s ease-in-out;
+        }
+
+        .container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Smooth transition for fade effect */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page.active {
+            display: flex;
+            opacity: 1; /* Fade in */
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        nav a {
+            color: #d4a8ff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block; /* Ensures each link is on its own line */
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <h1 class="glow">Welcome to Hanna Jamias' Personal Website >.< </h1>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <nav id="top-link">
+            <!-- Dynamic top navigation link -->
+        </nav>
+    </div>
+
+    <!-- Pages -->
+    <div class="container">
+        <div class="page" id="🌠 myself 🌠">
+            <h1 style="position:relative; bottom:80px;">✮ ˖. ° .⋆⪼ Yooo, I'm Hanna ⪻｡ ˖ ✧ ° .⋆ </h1>
+            <h3 style="position:relative; bottom:70px;"> ⪼ Computer Science enjoyer from 1-B ⪻ </h3>
+            <img src="snake.jpg" width="200" height="320" style="position:absolute; right:130px; top:50px; opacity: .8" >
+            <img src="gamedev.jpg" width="200" height="300" style="position:absolute; left:130px; top:50px; opacity: .8" >
+            <p>✧ I like software, aircrafts, spacecrafts, and the space ✧</p> <br>
+            <p>♡ Currently, I'm learning how to make my personal bot using Python ♡</p> <br>
+            <p> ๋࣭ ⭑ I write songs along with my ukulele and make games using Lua  ๋࣭ ⭑ </p>
+            <img src="coding.jpg" width="200" height="300" style="position:absolute; right:130px; bottom:130px; opacity: .8" >
+            <img src="songwriting.png" width="350" height="300" style="position:absolute; left:60px; bottom:130px; opacity: .8" >
+        </div>
+
+        <div class="page" id="🌠 resume 🌠">
+            <h1 style="position:relative; bottom:80px;"> ✮ ˖. ° .⋆⪼ Resume ⪻｡ ˖ ✧ ° .⋆ </h1>
+            <img src="resume.jpg" height="550" style="position:relative; bottom:80px;">
+        </div>
+
+        <div class="page" id="🚀 favorites 🚀">
+            <h1 style="position:relative; bottom:200px;"> ✮ ˖. ° .⋆⪼ Favorites ⪻｡ ˖ ✧ ° .⋆ </h1>
+            <img src="Kurisu.jpg" width="350" height="300" style="position:relative; right:400px; bottom:200px">
+            <p style="position:relative; right:400px; bottom:200px"> Anime Character: Kurisu Makise </p>
+            <img src="BSD.jpg" width="350" height="300" style="position:absolute; right:400px; top:140px">
+            <p style="position:absolute; right:400px; top:430px"> Anime: Bungo Stray Dogs </p>
+            <img src="csgo.jpg" width="350" height="300" style="position:absolute; left:370px; bottom:140px">
+            <p style="position:absolute; left:400px; bottom:100px"> Video Game: CS:GO </p>
+            <img src="IASN.jpg" width="350" height="300" style="position:absolute; right:390px; bottom:140px"> 
+            <p style="position:absolute; right:300px; bottom:100px"> Song: In A Spring Noon by Hanna </p>
+        
+        </div>
+
+        <div class="page" id="🚀 family 🚀">
+            <h1 style="position:relative; bottom:80px;">  ✮ ˖. ° .⋆⪼ Family ⪻｡ ˖ ✧ ° .⋆ </h1>
+            <img src="family.jpg" width="350" height="500" style="position:relative; bottom:60px;">
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <nav id="bottom-link">
+            <!-- Dynamic bottom navigation link -->
+        </nav>
+    </div>
+
+    <h6 style="color:rgb(155, 195, 255); position:relative; top:825px;"> © 2025 Hanna Jamias </h6>  <!-- remember this multiple styling code-->
+
+    <script>
+        // List of pages in order
+        const pages = ["🌠 myself 🌠", "🌠 resume 🌠", "🚀 favorites 🚀", "🚀 family 🚀"];
+        let currentPageIndex = 0; // Start with the first page
+
+        // Function to update the active page
+        function updatePage(index) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show the current page
+            const currentPage = document.getElementById(pages[index]);
+            currentPage.classList.add('active');
+
+            // Update navigation links
+            const topNav = document.getElementById('top-link');
+            const bottomNav = document.getElementById('bottom-link');
+
+            // Set the top navigation link (to previous page)
+            if (index > 0) {
+                topNav.innerHTML = `<a href="#" onclick="navigateTo(${index - 1})">${pages[index - 1]}</a>`;
+            } else {
+                topNav.innerHTML = `<a href="#" onclick="navigateTo(${pages.length - 1})">${pages[pages.length - 1]}</a>`;
+            }
+
+            // Set the bottom navigation link (to next page)
+            if (index < pages.length - 1) {
+                bottomNav.innerHTML = `<a href="#" onclick="navigateTo(${index + 1})">${pages[index + 1]}</a>`;
+            } else {
+                bottomNav.innerHTML = `<a href="#" onclick="navigateTo(0)">${pages[0]}</a>`;
+            }
+        }
+
+        // Function to navigate to a specific page
+        function navigateTo(index) {
+            currentPageIndex = index;
+            updatePage(index);
+        }
+
+        // Initialize the first page
+        updatePage(currentPageIndex);
+    </script>
+<canvas></canvas>
+
+    <script> // moving stars effect :)
+        /*          *     .        *  .    *    *   .
+         .  *  move your mouse to over the stars   .
+         *  .  .   change these values:   .  *
+           .      * .        .          * .       */
+        const STAR_COLOR = '#fff';
+        const STAR_SIZE = 3;
+        const STAR_MIN_SCALE = 0.2;
+        const OVERFLOW_THRESHOLD = 50;
+        const STAR_COUNT = ( window.innerWidth + window.innerHeight ) / 8;
+
+        const canvas = document.querySelector( 'canvas' ),
+            context = canvas.getContext( '2d' );
+
+        let scale = 1, // device pixel ratio
+            width,
+            height;
+
+        let stars = [];
+
+        let pointerX,
+            pointerY;
+
+        let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
+
+        let touchInput = false;
+
+        generate();
+        resize();
+        step();
+
+        window.onresize = resize;
+        canvas.onmousemove = onMouseMove;
+        canvas.ontouchmove = onTouchMove;
+        canvas.ontouchend = onMouseLeave;
+        document.onmouseleave = onMouseLeave;
+
+        function generate() {
+
+            for( let i = 0; i < STAR_COUNT; i++ ) {
+                stars.push({
+                    x: 0,
+                    y: 0,
+                    z: STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE )
+                });
+            }
+
+        }
+
+        function placeStar( star ) {
+
+            star.x = Math.random() * width;
+            star.y = Math.random() * height;
+
+        }
+
+        function recycleStar( star ) {
+
+            let direction = 'z';
+
+            let vx = Math.abs( velocity.x ),
+                vy = Math.abs( velocity.y );
+
+            if( vx > 1 || vy > 1 ) {
+                let axis;
+
+                if( vx > vy ) {
+                    axis = Math.random() < vx / ( vx + vy ) ? 'h' : 'v';
+                }
+                else {
+                    axis = Math.random() < vy / ( vx + vy ) ? 'v' : 'h';
+                }
+
+                if( axis === 'h' ) {
+                    direction = velocity.x > 0 ? 'l' : 'r';
+                }
+                else {
+                    direction = velocity.y > 0 ? 't' : 'b';
+                }
+            }
+
+            star.z = STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE );
+
+            if( direction === 'z' ) {
+                star.z = 0.1;
+                star.x = Math.random() * width;
+                star.y = Math.random() * height;
+            }
+            else if( direction === 'l' ) {
+                star.x = -OVERFLOW_THRESHOLD;
+                star.y = height * Math.random();
+            }
+            else if( direction === 'r' ) {
+                star.x = width + OVERFLOW_THRESHOLD;
+                star.y = height * Math.random();
+            }
+            else if( direction === 't' ) {
+                star.x = width * Math.random();
+                star.y = -OVERFLOW_THRESHOLD;
+            }
+            else if( direction === 'b' ) {
+                star.x = width * Math.random();
+                star.y = height + OVERFLOW_THRESHOLD;
+            }
+
+        }
+
+        function resize() {
+
+            scale = window.devicePixelRatio || 1;
+
+            width = window.innerWidth * scale;
+            height = window.innerHeight * scale;
+
+            canvas.width = width;
+            canvas.height = height;
+
+            stars.forEach( placeStar );
+
+        }
+
+        function step() {
+
+            context.clearRect( 0, 0, width, height );
+
+            update();
+            render();
+
+            requestAnimationFrame( step );
+
+        }
+
+        function update() {
+
+            velocity.tx *= 0.96;
+            velocity.ty *= 0.96;
+
+            velocity.x += ( velocity.tx - velocity.x ) * 0.8;
+            velocity.y += ( velocity.ty - velocity.y ) * 0.8;
+
+            stars.forEach( ( star ) => {
+
+                star.x += velocity.x * star.z;
+                star.y += velocity.y * star.z;
+
+                star.x += ( star.x - width/2 ) * velocity.z * star.z;
+                star.y += ( star.y - height/2 ) * velocity.z * star.z;
+                star.z += velocity.z;
+
+                // recycle when out of bounds
+                if( star.x < -OVERFLOW_THRESHOLD || star.x > width + OVERFLOW_THRESHOLD || star.y < -OVERFLOW_THRESHOLD || star.y > height + OVERFLOW_THRESHOLD ) {
+                    recycleStar( star );
+                }
+
+            } );
+
+        }
+
+        function render() {
+
+            stars.forEach( ( star ) => {
+
+                context.beginPath();
+                context.lineCap = 'round';
+                context.lineWidth = STAR_SIZE * star.z * scale;
+                context.globalAlpha = 0.5 + 0.5*Math.random();
+                context.strokeStyle = STAR_COLOR;
+
+                context.beginPath();
+                context.moveTo( star.x, star.y );
+
+                var tailX = velocity.x * 2,
+                    tailY = velocity.y * 2;
+
+                // stroke() wont work on an invisible line
+                if( Math.abs( tailX ) < 0.1 ) tailX = 0.5;
+                if( Math.abs( tailY ) < 0.1 ) tailY = 0.5;
+
+                context.lineTo( star.x + tailX, star.y + tailY );
+
+                context.stroke();
+
+            } );
+
+        }
+
+        function movePointer( x, y ) {
+
+            if( typeof pointerX === 'number' && typeof pointerY === 'number' ) {
+
+                let ox = x - pointerX,
+                    oy = y - pointerY;
+
+                velocity.tx = velocity.tx + ( ox / 8*scale ) * ( touchInput ? 1 : -1 );
+                velocity.ty = velocity.ty + ( oy / 8*scale ) * ( touchInput ? 1 : -1 );
+
+            }
+
+            pointerX = x;
+            pointerY = y;
+
+        }
+
+        function onMouseMove( event ) {
+
+            touchInput = false;
+
+            movePointer( event.clientX, event.clientY );
+
+        }
+
+        function onTouchMove( event ) {
+
+            touchInput = true;
+
+            movePointer( event.touches[0].clientX, event.touches[0].clientY, true );
+
+            event.preventDefault();
+
+        }
+
+        function onMouseLeave() {
+
+            pointerX = null;
+            pointerY = null;
+
+        }
+
+    </script>
+</body>
+</html>
